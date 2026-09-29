@@ -1,0 +1,6 @@
+export const STAGES=['To Apply','Applied','Phone Screen','Assessment','Final Interview','Offer','Rejected'] as const;
+export type Stage=typeof STAGES[number];
+export interface JobResult {company_name?:string|null;role_title?:string|null;status?:string;date_applied?:string|null;location?:string|null;location_format?:string|null;employment_type?:string|null;posted_date?:string|null;deadline?:string|null;visa_sponsorship?:string|null;posted_salary?:string|null;expected_salary?:string|null;requirements?:string[];technologies?:string[];description_text?:string;resume_version_used?:string|null;portfolio_case_study_attached?:string|null;core_competency_highlighted?:string|null;referral_internal_contact?:string|null;last_contact_date?:string|null;next_action?:string|null;next_action_deadline?:string|null;notes?:string|null;evidence?:string[]}
+export interface Job {id:string;source_url:string;page_title?:string;captured_at:string;updated_at:string;processing_status:string;processing_error?:string|null;attempts:number;result:JobResult|null}
+export interface Profile {name:string;headline:string;location:string;target_roles:string;skills:string;visa_context:string;summary:string;cv_text:string}
+export type Page='Overview'|'Pipeline'|'Jobs'|'Add jobs'|'AI assistant'|'Profile';
